@@ -1,0 +1,144 @@
+.body {
+  background-color: #94d0cc;
+}
+
+ul {
+  list-style: lower-alpha;
+}
+h1,
+p,
+h2,
+li,
+tr,
+th {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+p,
+li,
+tr,
+th {
+  font-size: 1.5rem;
+}
+
+a {
+  border-bottom: 1px solid #453886;
+  color: #453886;
+  padding-bottom: 0.25em;
+  text-decoration: none;
+}
+
+a:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: 0.3em;
+  text-decoration: none;
+}
+a:active {
+  color: #ff00e4;
+}
+a:visited {
+  color: #325288;
+}
+
+.home::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.home:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.home::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background: #ffdede;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  border-style: dashed;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td,
+table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #867ae9;
+  font-size: 16px;
+}
+table tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #e3f1d5;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td,
+table th {
+  text-align: left;
+}
+table td.l,
+table th.l {
+  text-align: right;
+}
+table td.c,
+table th.c {
+  text-align: center;
+}
+table td.r,
+table th.r {
+  text-align: center;
+}
+.jurassic {
+  background-color: #fff5ab;
+}
+.Maze {
+  background-color: #ffcead;
+  color: #000000;
+}
+.Spiderman {
+  background-color: #c449c2;
+  color: #ffffff;
+}
+.title {
+  color: #ffffff;
+}
+.top_picks,
+.hw2,
+.home {
+  text-align: center;
+}
+.hw2,
+.top_picks {
+  color: #010038;
+}
+.popcorn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
