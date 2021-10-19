@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CMPS 2680 Homework 2</title>
+  </head>
+  <body class="body">
+    <h1 class="hw2">CMPS 2680 Homework 4</h1>
+    <p class="home">
+      <a href="https://cs.csub.edu/~etagaca/2680F21/">Back to home </a>
+    </p>
+    <h2 class="top_picks"><span id="name"></span>'s Top Picks</h2>
+
+    <table>
+      <thead>
+        <tr class="title">
+          <th>Title</th>
+          <th>Type</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="jurassic">
+          <td>Jurassic World</td>
+          <td>Film</td>
+          <td>I like dinosaurs</td>
+        </tr>
+        <tr class="Maze">
+          <td>Maze Runner</td>
+          <td>Film</td>
+          <td>I like running</td>
+        </tr>
+        <tr class="Spiderman">
+          <td>The Amazing Spiderman</td>
+          <td>Film</td>
+          <td>I love science</td>
+        </tr>
+      </tbody>
+    </table>
+    <img class="popcorn" src="pop.gif" />
+
+    <script>
+      console.log("Welcome to my webpage");
+      var name = prompt("What is your name?");
+      if (name.length === 0) {
+        console.error("Please type your name");
+      } else {
+        console.log(name);
+        document.write(name);
+        document.write(name);
+        document.write(name);
+        document.getElementById("name").innerHTML = name; //just some extra details :D
+      }
+    </script>
+  </body>
+</html>
