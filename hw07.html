@@ -1,0 +1,56 @@
+<html>
+  <body>
+    <h2>CMPS 2680</h2>
+
+    <p id="demo" style="font-size: x-large"></p>
+    <input id="guess_input" type="number" />
+    <input type="submit" onclick="push()" value="Add" />
+
+    <button onclick="sort()">sort_V1</button>
+    <button onclick="bubbleSort()">sort_V2</button>
+
+    <script>
+      let fruits = [];
+      //I'm not a big fan of the "," on my numbers o`,o
+      document.getElementById("demo").innerHTML = fruits.join(" ");
+
+      function push() {
+        let input = document.getElementById("guess_input").value;
+        //string -> number
+        input = parseInt(input);
+        fruits.push(input);
+        document.getElementById("demo").innerHTML = fruits.join(" ");
+        document.getElementById("guess_input").value = "";
+      }
+      // The boring way...
+      function sort() {
+        fruits.sort(function (a, b) {
+          return a - b;
+        });
+        document.getElementById("demo").innerHTML = fruits.join(" ");
+      }
+
+      //The cool way 😎
+      function bubbleSort() {
+        let isSorted = false;
+
+        while (!isSorted) {
+          isSorted = true;
+          for (let i = 0; i < fruits.length; i++) {
+            if (fruits[i] > fruits[i + 1]) {
+              swap(i, i + 1, fruits);
+              isSorted = false;
+            }
+          }
+        }
+        document.getElementById("demo").innerHTML = fruits.join(" ");
+      }
+      //helper function for swapping
+      function swap(i, j, fruits) {
+        const temp = fruits[i];
+        fruits[i] = fruits[j];
+        fruits[j] = temp;
+      }
+    </script>
+  </body>
+</html>
