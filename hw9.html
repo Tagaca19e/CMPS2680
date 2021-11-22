@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>replit</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
+    />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    Homework 9
+
+    <form method="post" id="form">
+      Title: <input id="title" type="text" name="title" required /> <br />
+      Text: <input id="blog" type="text" name="blog" required /> <br />
+      <input type="submit" />
+      <input
+        type="file"
+        accept="image/*"
+        name="image"
+        id="file"
+        onchange="loadFile(event)"
+        required
+      />
+    </form>
+
+    <p><img id="output" width="500" /></p>
+
+    <span id="result"> </span>
+
+    <script>
+      let image = "/";
+      let loadFile = function (event) {
+        // store the image to a global var
+        image = event.target.files[0];
+      };
+      $("form").on("submit", function (event) {
+        event.preventDefault();
+
+        let target = document.getElementById("output");
+        // we pass the global var to our src so we can post the image and text at the same time
+        target.src = URL.createObjectURL(image);
+
+        let accesscode = "2680F21";
+        let title = $("#title").val();
+        //since our web server does not take care of the title, I am not storing it to the data and just appending it to the result.
+        let text = $("#blog").val();
+        console.log(text);
+
+        $.post(
+          "https://cs.csub.edu/~nick/2680/demos/voweler.php",
+          {
+            text: text,
+            accesscode: accesscode,
+          },
+
+          function (data, status) {
+            if (status == "success") {
+              console.log("success", data);
+              $("#result").html(data.text + " " + title);
+            }
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
