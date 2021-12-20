@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <button
+        class="child"
+        onclick="location.href = 'http://127.0.0.1:5500/CMPS2680/Final2/index.html';"
+      >
+        Tap Here To Play
+      </button>
+    </div>
+
+    <style>
+      * {
+        font-family: "Orbitron", sans-serif;
+      }
+
+      body,
+      html {
+        background-image: url("main.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: #262262;
+        height: 100%;
+      }
+      .container {
+        top: 50%;
+        position: relative;
+      }
+
+      .child {
+        margin: 0;
+        position: absolute;
+        width: 200px;
+        height: 80px;
+        font-size: 20px;
+        border-radius: 20px;
+        background-color: #78dd77;
+        border: 2px;
+        color: white;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </body>
+</html>
